@@ -16,6 +16,7 @@ A basic Next.js with Tailwind CSS, Shadcn (initialization) and TypeScript.
 - 🐶 Husky & Lint Staged — Run scripts on your staged files before they are committed
 - 🤖 Conventional Commit Lint — Make sure you & your teammates follow conventional commit
 - 🧳 T3 Env — Type-safe environment variables
+- 👷 PR Workflow — Run Type Check & Linters on Pull Requests
 
 ## Getting Started
 
