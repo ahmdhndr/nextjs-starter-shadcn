@@ -20,6 +20,7 @@
     "lint:fix": "eslint \"src/**/*.+(ts|js|tsx)\" --fix",
     "format": "prettier src/ --write",
     "format:check": "prettier src/ --check",
+    "format:ci": "prettier --list-different .",
     "prepare": "husky"
   },
   "dependencies": {
@@ -59,8 +60,8 @@
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "eslint . --fix",
+      "prettier . --write"
     ]
   }
 }
