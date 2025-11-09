@@ -1,45 +1,36 @@
-import { FlatCompat } from "@eslint/eslintrc";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+import js from "@eslint/js";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import prettier from "eslint-config-prettier";
+import checkfile from "eslint-plugin-check-file";
+import n from "eslint-plugin-n";
+import { defineConfig } from "eslint/config";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.config({
-    extends: [
-      "next/core-web-vitals",
-      "next/typescript",
-      "plugin:prettier/recommended",
-    ],
-    plugins: ["check-file", "n"],
+const eslintConfig = defineConfig([
+  js.configs.recommended,
+  nextVitals,
+  prettier,
+  {
+    plugins: {
+      checkfile,
+      n,
+    },
     rules: {
-      "prefer-arrow-callback": ["error"],
-      "prefer-template": ["error"],
+      "prefer-arrow-callback": "error",
+      "prefer-template": "error",
       semi: ["error"],
       quotes: ["error", "double"],
-      "n/no-process-env": ["error"],
-      "check-file/filename-naming-convention": [
+      "n/no-process-env": "error",
+      "checkfile/filename-naming-convention": [
         "error",
-        {
-          "**/*.{ts,tsx}": "KEBAB_CASE",
-        },
-        {
-          ignoreMiddleExtensions: true,
-        },
+        { "**/*.{ts,tsx}": "KEBAB_CASE" },
+        { ignoreMiddleExtensions: true },
       ],
-      "check-file/folder-naming-convention": [
+      "checkfile/folder-naming-convention": [
         "error",
-        {
-          "src/**/!(__tests__|^[.*)": "KEBAB_CASE",
-        },
+        { "src/**/!(__tests__|^[.*)": "KEBAB_CASE" },
       ],
     },
-  }),
-];
+  },
+]);
 
 export default eslintConfig;
