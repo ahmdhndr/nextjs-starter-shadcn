@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import Link from "next/link";
+import React from "react";
 
 import { Button } from "@/components/ui/button";
 
@@ -34,9 +35,9 @@ export default function RootLayout({
         <div className="flex h-screen w-screen flex-col justify-between">
           <main className="container flex-grow">{children}</main>
           <footer className="flex h-14 items-center justify-center border-t font-sans">
-            &copy; 2025 By{" "}
+            &copy; {new Date().getFullYear()} By{" "}
             <span className="ml-1">
-              <Link href={"https://ahmdhndr.web.id/"} target="_blank">
+              <Link href={"https://ahmdhndr.vercel.app/"} target="_blank">
                 <Button variant={"link"} className="p-0">
                   Achmad Hendarsyah
                 </Button>
