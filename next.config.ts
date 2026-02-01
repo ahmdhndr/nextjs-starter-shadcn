@@ -1,10 +1,9 @@
-import type { NextConfig } from "next";
+import { NextConfig } from "next";
+import "./src/lib/env";
 
-import "./src/lib/env/client";
-import "./src/lib/env/server";
-
+/** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-  /* config options here */
+  /** ... */
 };
 
 export default nextConfig;

@@ -3,15 +3,14 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    NODE_ENV: z
-      .enum(["development", "test", "production"])
-      .default("development"),
+    NODE_ENV: z.enum(["development", "test", "production"]),
   },
-  /**
-   * Makes it so that empty strings are treated as undefined.
-   * `SOME_VAR: z.string()` and `SOME_VAR=''` will throw an error.
-   */
-  emptyStringAsUndefined: true,
+  // If you're using Next.js < 13.4.4, you'll need to specify the runtimeEnv manually
+  // runtimeEnv: {
+  //   DATABASE_URL: process.env.DATABASE_URL,
+  //   OPEN_AI_API_KEY: process.env.OPEN_AI_API_KEY,
+  // },
+  // For Next.js >= 13.4.4, you can just reference process.env:
   // eslint-disable-next-line n/no-process-env
   experimental__runtimeEnv: process.env,
 });

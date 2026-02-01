@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
     <div className="flex h-full w-full items-center justify-center">
@@ -12,7 +14,7 @@ export default function Home() {
             A basic starter for Next.js with Tailwind CSS, Shadcn
             (initialization) and Typescript. <br />
             Start by editing{" "}
-            <code className="rounded bg-black/[.05] px-1 py-0.5 font-semibold dark:bg-white/[.06]">
+            <code className="rounded bg-black/5 px-1 py-0.5 font-semibold dark:bg-white/6">
               src/app/page.tsx
             </code>
             .
@@ -23,7 +25,7 @@ export default function Home() {
               href={"https://github.com/ahmdhndr/nextjs-starter-shadcn"}
               target="_blank"
             >
-              Github Repo
+              <Button className="cursor-pointer">Github Repo</Button>
             </Link>{" "}
             for further information.
           </p>
