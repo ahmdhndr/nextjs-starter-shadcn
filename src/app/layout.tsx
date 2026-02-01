@@ -28,17 +28,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${jakartaSans.variable} ${geistMono.variable} h-full w-full antialiased`}
-      >
+    <html lang="en" className={`${jakartaSans.variable} ${geistMono.variable}`}>
+      <body className="h-full w-full antialiased">
         <div className="flex h-screen w-screen flex-col justify-between">
-          <main className="container flex-grow">{children}</main>
-          <footer className="flex h-14 items-center justify-center border-t font-sans">
-            &copy; {new Date().getFullYear()} By{" "}
+          <main className="grow">{children}</main>
+          <footer className="flex h-14 items-center justify-center border-t font-mono">
+            &copy; {new Date().getFullYear()}
             <span className="ml-1">
-              <Link href={"https://ahmdhndr.vercel.app/"} target="_blank">
-                <Button variant={"link"} className="p-0">
+              <Link
+                href={"https://achmadhendarsyah.vercel.app/"}
+                target="_blank"
+              >
+                <Button variant={"link"} className="cursor-pointer p-0">
                   Achmad Hendarsyah
                 </Button>
               </Link>
